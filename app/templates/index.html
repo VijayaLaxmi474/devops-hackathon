@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume Analyzer</title>
+</head>
+<body>
+    <h1>Upload Resume</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="resume" required>
+        <button type="submit">Upload</button>
+    </form>
+
+    {% if score is defined %}
+        <h2>Analysis Result</h2>
+        <p><b>Score:</b> {{ score }}%</p>
+        <p><b>Found Keywords:</b> {{ found }}</p>
+        <p><b>Missing Keywords:</b> {{ missing }}</p>
+        <p><b>Suggestions:</b> {{ suggestions }}</p>
+    {% endif %}
+</body>
+</html>
